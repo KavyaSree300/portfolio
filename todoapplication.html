@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo app</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const inputBox = document.getElementById("input-box");
+    const addButton = document.getElementById("add-button");
+    const todoList = document.getElementById("todo-list");
+
+    addButton.addEventListener("click", function (taskText)  {
+        const taskText = inputBox.value.trim();
+        if (taskText !== "") {
+            const listItem = document.createElement("li");
+            listItem.textContent = taskText;
+            todoList.appendChild(listItem);
+            inputBox.value = "";
+        }
+    });
+
+    inputBox.addEventListener("keyup", function (event) {
+        if (event.key === "Enter") {
+            addButton.click();
+        }
+    });
+});
+
+
+
+
+
+
+
+    </script>
+</head>
+<style>
+    *{
+        background-color: rgb(25, 240, 61);
+        
+    }
+    h2{
+        text-align: center;
+        margin: 4rem;
+    }
+    h2 img{
+        width: 35px;
+
+    }
+    input{
+        width: 250px;
+        height: 50px;
+        text-align: center;
+        border-radius: 10px;
+        outline: none;
+        background-color: aliceblue;
+        
+    }
+    button{
+        width: 50px;
+        height: 53px;
+        border-radius: 10px;
+        background-color: blue;
+        color: aliceblue;
+        
+    }
+    .container{
+        width: 50%;
+        height: 50vh;
+        padding: 5px;
+        border: solid;
+        border-radius: 10px;
+        border-color: white;
+        background-color: white;
+
+    }
+</style>
+<body>
+    <div class="container">
+        <div id="todo app">
+            <h2>TODO-LIST <img src="app.jpg"></h2>
+            <input type="text" id="input-box" placeholder="ENTER YOUR TODO LIST">
+            <button>add</button>
+            
+        </div>
+        
+    
+    </div>
+    
+</body>
+</html>
